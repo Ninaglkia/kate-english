@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "about": "About",
+    "method": "Method",
+    "pricing": "Pricing",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Learn English with Confidence",
+    "subtitle": "Certified English teacher with a personalized approach to help you achieve your language goals",
+    "cta": "Book a Free Trial Lesson"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Hi! My name is Kate. I'm a certified English teacher, graduated from Gomel State University (F. Skorina). My teaching experience and personalized approach help students of all levels achieve their goals — from everyday conversation to exam preparation.",
+    "experience": "Certified Teacher",
+    "experienceDesc": "Degree in English Language Teaching",
+    "personalized": "Personal Approach",
+    "personalizedDesc": "Tailored lessons for your goals",
+    "flexible": "Flexible Schedule",
+    "flexibleDesc": "Online lessons at your convenience"
+  },
+  "method": {
+    "title": "How I Teach",
+    "conversation": "Conversation Practice",
+    "conversationDesc": "Build fluency through real-life dialogues and discussions on topics that interest you",
+    "grammar": "Grammar & Structure",
+    "grammarDesc": "Master English grammar with clear explanations and practical exercises",
+    "exams": "Exam Preparation",
+    "examsDesc": "Focused preparation for IELTS, TOEFL, and other international exams"
+  },
+  "pricing": {
+    "title": "Lesson Plans",
+    "subtitle": "Choose the plan that fits your goals",
+    "basic": {
+      "name": "Basic",
+      "price": "$15",
+      "period": "per lesson",
+      "description": "Perfect for casual learners",
+      "features": [
+        "Free conversation practice",
+        "1 lesson per week",
+        "Vocabulary building",
+        "Homework review"
+      ]
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "price": "$25",
+      "period": "per lesson",
+      "description": "For serious improvement",
+      "features": [
+        "Grammar + conversation",
+        "2 lessons per week",
+        "Custom study materials",
+        "Progress tracking",
+        "Homework & corrections"
+      ]
+    },
+    "premium": {
+      "name": "Premium",
+      "price": "$40",
+      "period": "per lesson",
+      "description": "For exam success",
+      "popular": true,
+      "features": [
+        "IELTS / TOEFL preparation",
+        "Personalized study plan",
+        "3 lessons per week",
+        "All materials included",
+        "Mock exams & feedback",
+        "Priority scheduling"
+      ]
+    }
+  },
+  "cta": {
+    "title": "Ready to Start Your English Journey?",
+    "subtitle": "Book your first lesson today — the first trial lesson is free!",
+    "button": "Message Me on Telegram"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "telegram": "Contact on Telegram"
+  }
+}

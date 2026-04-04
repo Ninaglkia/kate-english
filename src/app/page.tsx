@@ -9,7 +9,6 @@ import {
 import PricingCards from "@/components/PricingCards";
 import GhostCursorLazy from "@/components/GhostCursorLazy";
 import Text3D from "@/components/Text3D";
-import SoftAurora from "@/components/SoftAurora";
 
 const TELEGRAM_LINK = "https://t.me/kate_english";
 
@@ -198,21 +197,6 @@ export default async function Home() {
 
       {/* CTA - Aurora + Ghost reveal */}
       <section className="py-24 px-4 sm:px-6 relative min-h-[600px] bg-[#050508] rounded-3xl mx-4 sm:mx-6 overflow-hidden">
-        <SoftAurora
-          speed={0.4}
-          scale={1.2}
-          brightness={2.5}
-          color1="#ff6ec7"
-          color2="#8b5cf6"
-          noiseFrequency={2.0}
-          noiseAmplitude={0.8}
-          bandHeight={0.5}
-          bandSpread={3}
-          octaveDecay={0.5}
-          layerOffset={1.5}
-          colorSpeed={0.8}
-          enableMouseInteraction={false}
-        />
         <GhostCursorLazy
           color="#ffffff"
           brightness={6}

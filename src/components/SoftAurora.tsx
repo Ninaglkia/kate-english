@@ -44,8 +44,11 @@ export default function SoftAurora({
     const renderer = new Renderer({ alpha: true, premultipliedAlpha: false });
     const gl = renderer.gl;
     gl.clearColor(0, 0, 0, 0);
+    gl.canvas.style.position = "absolute";
+    gl.canvas.style.inset = "0";
     gl.canvas.style.width = "100%";
     gl.canvas.style.height = "100%";
+    gl.canvas.style.display = "block";
     gl.canvas.style.pointerEvents = "none";
 
     let currentMouse = [0.5, 0.5];
@@ -78,8 +81,11 @@ export default function SoftAurora({
     });
     const mesh = new Mesh(gl, { geometry, program });
     container.appendChild(gl.canvas);
+
+    const ro = new ResizeObserver(() => resize());
+    ro.observe(container);
     resize();
-    window.addEventListener("resize", resize);
+
     if (enableMouseInteraction) {
       window.addEventListener("mousemove", handleMouseMove);
       window.addEventListener("mouseleave", handleMouseLeave);
@@ -101,7 +107,7 @@ export default function SoftAurora({
 
     return () => {
       cancelAnimationFrame(raf);
-      window.removeEventListener("resize", resize);
+      ro.disconnect();
       if (enableMouseInteraction) {
         window.removeEventListener("mousemove", handleMouseMove);
         window.removeEventListener("mouseleave", handleMouseLeave);

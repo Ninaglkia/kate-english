@@ -265,7 +265,7 @@ const GhostCursor = ({
     const ensureLoop = () => { if (!runningRef.current) { runningRef.current = true; rafRef.current = requestAnimationFrame(animate); } };
 
     const onPointerMove = (e: PointerEvent) => {
-      const rect = parent.getBoundingClientRect();
+      const rect = host.getBoundingClientRect();
       currentMouseRef.current.set(
         THREE.MathUtils.clamp((e.clientX - rect.left) / Math.max(1, rect.width), 0, 1),
         THREE.MathUtils.clamp(1 - (e.clientY - rect.top) / Math.max(1, rect.height), 0, 1)

@@ -7,8 +7,8 @@ import {
   AnimatedSection,
 } from "@/components/AnimatedCards";
 import PricingCards from "@/components/PricingCards";
-import SectionWithLines from "@/components/SectionWithLines";
-import GhostCursor from "@/components/GhostCursor";
+import dynamic from "next/dynamic";
+const GhostCursor = dynamic(() => import("@/components/GhostCursor"), { ssr: false });
 
 const TELEGRAM_LINK = "https://t.me/kate_english";
 
@@ -102,8 +102,8 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* About + Method + Pricing with FloatingLines background */}
-      <SectionWithLines>
+      {/* About + Method + Pricing */}
+      <>
         {/* About */}
         <section id="about" className="py-24 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
@@ -193,7 +193,7 @@ export default async function Home() {
             />
           </div>
         </section>
-      </SectionWithLines>
+      </>
 
       {/* CTA - Ghost reveal effect */}
       <section className="py-24 px-4 sm:px-6 relative min-h-[500px] bg-[#0a0a0f] rounded-3xl mx-4 sm:mx-6 overflow-hidden">
@@ -213,17 +213,23 @@ export default async function Home() {
         />
         <div className="max-w-3xl mx-auto text-center relative z-10 flex flex-col items-center justify-center min-h-[400px]">
           <h2
-            className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-[#0a0a0f] mix-blend-difference select-none uppercase"
+            className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight select-none uppercase"
             style={{
-              textShadow: "0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15)",
-              WebkitTextStroke: "1px rgba(255,255,255,0.05)",
+              color: "#0a0a0f",
+              mixBlendMode: "difference",
               transform: "perspective(500px) rotateX(5deg)",
               letterSpacing: "-0.02em",
+              WebkitTextStroke: "0.5px rgba(255,255,255,0.1)",
             }}
           >
             {t("cta.title")}
           </h2>
-          <p className="mt-6 text-lg text-[#0a0a0f] mix-blend-difference select-none">{t("cta.subtitle")}</p>
+          <p
+            className="mt-6 text-lg select-none"
+            style={{ color: "#0a0a0f", mixBlendMode: "difference" }}
+          >
+            {t("cta.subtitle")}
+          </p>
           <a
             href={TELEGRAM_LINK}
             target="_blank"

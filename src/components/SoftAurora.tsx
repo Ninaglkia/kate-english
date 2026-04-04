@@ -111,5 +111,5 @@ export default function SoftAurora({
     };
   }, []);
 
-  return <div ref={containerRef} className="absolute inset-0 pointer-events-none opacity-60" />;
+  return <div ref={containerRef} className="absolute inset-0 pointer-events-none" />;
 }

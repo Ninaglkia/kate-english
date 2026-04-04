@@ -201,9 +201,9 @@ export default async function Home() {
         <SoftAurora
           speed={0.6}
           scale={1.5}
-          brightness={0.6}
+          brightness={1}
           color1="#f7f7f7"
-          color2="#8b5cf6"
+          color2="#e100ff"
           noiseFrequency={2.5}
           noiseAmplitude={1}
           bandHeight={0.5}

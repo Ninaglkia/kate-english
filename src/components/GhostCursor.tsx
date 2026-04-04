@@ -167,6 +167,10 @@ const GhostCursor = ({
     renderer.setClearColor(0x000000, 0);
     rendererRef.current = renderer;
     renderer.domElement.style.pointerEvents = "none";
+    renderer.domElement.style.display = "block";
+    renderer.domElement.style.width = "100%";
+    renderer.domElement.style.height = "100%";
+    renderer.domElement.style.background = "transparent";
     if (mixBlendMode) renderer.domElement.style.mixBlendMode = String(mixBlendMode);
     host.appendChild(renderer.domElement);
 

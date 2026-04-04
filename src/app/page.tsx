@@ -212,7 +212,7 @@ export default async function Home() {
           mixBlendMode="screen"
         />
         <div className="max-w-3xl mx-auto text-center relative z-10 flex flex-col items-center justify-center min-h-[400px]">
-          <Text3D text={t("cta.title")} className="w-full" />
+          <Text3D text={t("cta.title")} />
           <p
             className="mt-6 text-lg select-none"
             style={{ color: "#0a0a0f", mixBlendMode: "difference" }}

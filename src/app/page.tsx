@@ -195,8 +195,8 @@ export default async function Home() {
         </section>
       </SectionWithLines>
 
-      {/* CTA */}
-      <section className="py-24 px-4 sm:px-6 relative min-h-[500px]">
+      {/* CTA - Ghost reveal effect */}
+      <section className="py-24 px-4 sm:px-6 relative min-h-[500px] bg-[#0a0a0f] rounded-3xl mx-4 sm:mx-6 overflow-hidden">
         <GhostCursor
           color="#B19EEF"
           brightness={2}
@@ -209,24 +209,25 @@ export default async function Home() {
           bloomThreshold={0.025}
           fadeDelayMs={1000}
           fadeDurationMs={1500}
+          mixBlendMode="screen"
         />
-        <AnimatedSection className="max-w-3xl mx-auto text-center relative z-10">
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#1a1a2e]">
+        <div className="max-w-3xl mx-auto text-center relative z-10 flex flex-col items-center justify-center min-h-[400px]">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0a0a0f] mix-blend-difference select-none">
             {t("cta.title")}
           </h2>
-          <p className="mt-4 text-lg text-[#1a1a2e]/40">{t("cta.subtitle")}</p>
+          <p className="mt-6 text-lg text-[#0a0a0f] mix-blend-difference select-none">{t("cta.subtitle")}</p>
           <a
             href={TELEGRAM_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 mt-10 px-10 py-4 bg-[#0088cc] text-white rounded-full text-lg font-semibold hover:bg-[#006daa] transition-all hover:shadow-lg hover:shadow-[#0088cc]/25"
+            className="inline-flex items-center gap-3 mt-10 px-10 py-4 bg-[#0088cc] text-white rounded-full text-lg font-semibold hover:bg-[#006daa] transition-all hover:shadow-lg hover:shadow-[#0088cc]/25 relative z-20"
           >
             <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
               <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
             </svg>
             {t("cta.button")}
           </a>
-        </AnimatedSection>
+        </div>
       </section>
 
       {/* Footer */}

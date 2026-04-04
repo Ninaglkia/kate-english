@@ -8,6 +8,7 @@ import {
 } from "@/components/AnimatedCards";
 import PricingCards from "@/components/PricingCards";
 import GhostCursorLazy from "@/components/GhostCursorLazy";
+import Text3D from "@/components/Text3D";
 
 const TELEGRAM_LINK = "https://t.me/kate_english";
 
@@ -211,18 +212,7 @@ export default async function Home() {
           mixBlendMode="screen"
         />
         <div className="max-w-3xl mx-auto text-center relative z-10 flex flex-col items-center justify-center min-h-[400px]">
-          <h2
-            className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight select-none uppercase"
-            style={{
-              color: "#0a0a0f",
-              mixBlendMode: "difference",
-              transform: "perspective(500px) rotateX(5deg)",
-              letterSpacing: "-0.02em",
-              WebkitTextStroke: "0.5px rgba(255,255,255,0.1)",
-            }}
-          >
-            {t("cta.title")}
-          </h2>
+          <Text3D text={t("cta.title")} className="w-full" />
           <p
             className="mt-6 text-lg select-none"
             style={{ color: "#0a0a0f", mixBlendMode: "difference" }}

@@ -8,6 +8,7 @@ import {
 } from "@/components/AnimatedCards";
 import PricingCards from "@/components/PricingCards";
 import SectionWithLines from "@/components/SectionWithLines";
+import GhostCursor from "@/components/GhostCursor";
 
 const TELEGRAM_LINK = "https://t.me/kate_english";
 
@@ -195,8 +196,20 @@ export default async function Home() {
       </SectionWithLines>
 
       {/* CTA */}
-      <section className="py-24 px-4 sm:px-6 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#8b5cf6]/3 to-transparent pointer-events-none" />
+      <section className="py-24 px-4 sm:px-6 relative min-h-[500px]">
+        <GhostCursor
+          color="#B19EEF"
+          brightness={2}
+          edgeIntensity={0}
+          trailLength={50}
+          inertia={0.5}
+          grainIntensity={0.05}
+          bloomStrength={0.1}
+          bloomRadius={1}
+          bloomThreshold={0.025}
+          fadeDelayMs={1000}
+          fadeDurationMs={1500}
+        />
         <AnimatedSection className="max-w-3xl mx-auto text-center relative z-10">
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#1a1a2e]">
             {t("cta.title")}

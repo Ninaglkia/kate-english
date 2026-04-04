@@ -11,7 +11,7 @@ export default function Text3D({ text }: { text: string }) {
             aria-hidden={i > 0}
             className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase tracking-tight select-none block leading-[1.1]"
             style={{
-              color: "#0a0a0f",
+              color: "#050508",
               mixBlendMode: "difference",
               transform: `translateZ(${-i * 2}px)`,
               position: i === 0 ? "relative" : "absolute",

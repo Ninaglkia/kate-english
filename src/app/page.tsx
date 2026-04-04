@@ -9,6 +9,7 @@ import {
 import PricingCards from "@/components/PricingCards";
 import GhostCursorLazy from "@/components/GhostCursorLazy";
 import Text3D from "@/components/Text3D";
+import SoftAurora from "@/components/SoftAurora";
 
 const TELEGRAM_LINK = "https://t.me/kate_english";
 
@@ -195,27 +196,43 @@ export default async function Home() {
         </section>
       </>
 
-      {/* CTA - Ghost reveal effect */}
-      <section className="py-24 px-4 sm:px-6 relative min-h-[500px] bg-[#0a0a0f] rounded-3xl mx-4 sm:mx-6 overflow-hidden">
+      {/* CTA - Aurora + Ghost reveal */}
+      <section className="py-24 px-4 sm:px-6 relative min-h-[600px] bg-[#050508] rounded-3xl mx-4 sm:mx-6 overflow-hidden">
+        <SoftAurora
+          speed={0.6}
+          scale={1.5}
+          brightness={0.6}
+          color1="#f7f7f7"
+          color2="#8b5cf6"
+          noiseFrequency={2.5}
+          noiseAmplitude={1}
+          bandHeight={0.5}
+          bandSpread={1}
+          octaveDecay={0.1}
+          layerOffset={0}
+          colorSpeed={1}
+          enableMouseInteraction
+          mouseInfluence={0.25}
+        />
         <GhostCursorLazy
           color="#B19EEF"
-          brightness={3.5}
+          brightness={4}
           edgeIntensity={0}
-          trailLength={50}
+          trailLength={40}
           inertia={0.5}
-          grainIntensity={0.05}
-          bloomStrength={0.3}
+          grainIntensity={0.03}
+          bloomStrength={0.4}
           bloomRadius={1.5}
           bloomThreshold={0.02}
-          fadeDelayMs={1000}
-          fadeDurationMs={1500}
+          fadeDelayMs={2000}
+          fadeDurationMs={2000}
           mixBlendMode="screen"
         />
-        <div className="max-w-3xl mx-auto text-center relative z-10 flex flex-col items-center justify-center min-h-[400px]">
+        <div className="max-w-3xl mx-auto text-center relative z-10 flex flex-col items-center justify-center min-h-[500px]">
           <Text3D text={t("cta.title")} />
           <p
-            className="mt-6 text-lg select-none"
-            style={{ color: "#0a0a0f", mixBlendMode: "difference" }}
+            className="mt-8 text-lg select-none"
+            style={{ color: "#050508", mixBlendMode: "difference" }}
           >
             {t("cta.subtitle")}
           </p>

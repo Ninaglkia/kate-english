@@ -271,28 +271,22 @@ const GhostCursor = ({
     const onPointerMove = (e: PointerEvent) => {
       const rect = host.getBoundingClientRect();
       currentMouseRef.current.set(
-        THREE.MathUtils.clamp((e.clientX - rect.left) / Math.max(1, rect.width), 0, 1),
-        THREE.MathUtils.clamp(1 - (e.clientY - rect.top) / Math.max(1, rect.height), 0, 1)
+        (e.clientX - rect.left) / Math.max(1, rect.width),
+        1 - (e.clientY - rect.top) / Math.max(1, rect.height)
       );
       pointerActiveRef.current = true;
       lastMoveTimeRef.current = performance.now();
       ensureLoop();
     };
-    const onPointerEnter = () => { pointerActiveRef.current = true; ensureLoop(); };
-    const onPointerLeave = () => { pointerActiveRef.current = false; lastMoveTimeRef.current = performance.now(); ensureLoop(); };
 
-    parent.addEventListener("pointermove", onPointerMove, { passive: true });
-    parent.addEventListener("pointerenter", onPointerEnter, { passive: true });
-    parent.addEventListener("pointerleave", onPointerLeave, { passive: true });
+    window.addEventListener("pointermove", onPointerMove, { passive: true });
     ensureLoop();
 
     return () => {
       active = false; hasValidSizeRef.current = false;
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       runningRef.current = false; rafRef.current = null;
-      parent.removeEventListener("pointermove", onPointerMove);
-      parent.removeEventListener("pointerenter", onPointerEnter);
-      parent.removeEventListener("pointerleave", onPointerLeave);
+      window.removeEventListener("pointermove", onPointerMove);
       resizeObsRef.current?.disconnect();
       scene.clear(); geom.dispose(); material.dispose(); materialRef.current = null;
       composer.dispose(); composerRef.current = null;

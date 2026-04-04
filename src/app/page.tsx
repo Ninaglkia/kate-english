@@ -199,14 +199,14 @@ export default async function Home() {
       <section className="py-24 px-4 sm:px-6 relative min-h-[500px] bg-[#0a0a0f] rounded-3xl mx-4 sm:mx-6 overflow-hidden">
         <GhostCursor
           color="#B19EEF"
-          brightness={2}
+          brightness={3.5}
           edgeIntensity={0}
           trailLength={50}
           inertia={0.5}
           grainIntensity={0.05}
-          bloomStrength={0.1}
-          bloomRadius={1}
-          bloomThreshold={0.025}
+          bloomStrength={0.3}
+          bloomRadius={1.5}
+          bloomThreshold={0.02}
           fadeDelayMs={1000}
           fadeDurationMs={1500}
           mixBlendMode="screen"

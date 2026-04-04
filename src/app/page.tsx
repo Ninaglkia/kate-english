@@ -7,8 +7,7 @@ import {
   AnimatedSection,
 } from "@/components/AnimatedCards";
 import PricingCards from "@/components/PricingCards";
-import dynamic from "next/dynamic";
-const GhostCursor = dynamic(() => import("@/components/GhostCursor"), { ssr: false });
+import GhostCursorLazy from "@/components/GhostCursorLazy";
 
 const TELEGRAM_LINK = "https://t.me/kate_english";
 
@@ -197,7 +196,7 @@ export default async function Home() {
 
       {/* CTA - Ghost reveal effect */}
       <section className="py-24 px-4 sm:px-6 relative min-h-[500px] bg-[#0a0a0f] rounded-3xl mx-4 sm:mx-6 overflow-hidden">
-        <GhostCursor
+        <GhostCursorLazy
           color="#B19EEF"
           brightness={3.5}
           edgeIntensity={0}

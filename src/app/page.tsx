@@ -197,7 +197,10 @@ export default async function Home() {
       </>
 
       {/* CTA - Ghost reveal (touch on mobile, cursor on desktop) */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 relative min-h-[400px] sm:min-h-[600px] bg-[#050508] rounded-3xl mx-4 sm:mx-6 overflow-hidden">
+      <section
+        className="py-16 sm:py-24 px-4 sm:px-6 relative min-h-[400px] sm:min-h-[600px] rounded-3xl mx-4 sm:mx-6 overflow-hidden"
+        style={{ backgroundColor: "#050508", isolation: "isolate" }}
+      >
         <GhostCursorLazy
           color="#ffffff"
           brightness={6}

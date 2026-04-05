@@ -89,13 +89,13 @@ export default async function Home() {
           </div>
           <div className="flex-shrink-0 relative">
             <div className="absolute inset-0 rounded-3xl bg-[#8b5cf6]/10 blur-3xl scale-90" />
-            <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-[380px] lg:h-[380px] rounded-3xl overflow-hidden border border-black/5 shadow-2xl">
+            <div className="relative w-72 sm:w-80 lg:w-[380px] rounded-3xl overflow-hidden border border-black/5 shadow-2xl">
               <Image
                 src="/images/kate.jpg"
                 alt="Kate — English Tutor"
                 width={400}
-                height={400}
-                className="w-full h-full object-cover"
+                height={500}
+                className="w-full h-auto"
                 priority
               />
             </div>

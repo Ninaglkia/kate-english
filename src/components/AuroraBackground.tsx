@@ -10,20 +10,8 @@ export default function AuroraBackground() {
     setIsMobile(window.innerWidth < 768 || "ontouchstart" in window);
   }, []);
 
-  if (isMobile) {
-    return (
-      <div
-        className="fixed inset-0 z-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 30% at 50% 50%, rgba(225,0,255,0.08) 0%, transparent 100%)",
-        }}
-      />
-    );
-  }
-
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none">
+    <div className="fixed inset-0 z-0 pointer-events-none" style={{ willChange: "transform" }}>
       <SoftAurora
         speed={0.6}
         scale={1.5}

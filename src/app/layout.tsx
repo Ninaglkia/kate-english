@@ -14,6 +14,16 @@ export const metadata: Metadata = {
   title: "Kate — English Tutor",
   description:
     "Learn English with Kate — certified teacher with personalized approach. Online lessons for all levels.",
+  openGraph: {
+    title: "Kate — English Tutor",
+    description: "Learn English with Kate — certified teacher with personalized approach.",
+    images: [{ url: "/images/kate.jpg", width: 800, height: 1000 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kate — English Tutor",
+    images: ["/images/kate.jpg"],
+  },
 };
 
 export default async function RootLayout({

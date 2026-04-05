@@ -234,7 +234,7 @@ export default async function Home() {
           bloomThreshold={0.01}
           fadeDelayMs={2000}
           fadeDurationMs={2000}
-          mixBlendMode="screen"
+          mixBlendMode="normal"
           zIndex={10}
         />
 

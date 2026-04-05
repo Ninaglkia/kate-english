@@ -53,12 +53,9 @@ export default function RevealSection({
       <div
         className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pointer-events-none"
         style={{
-          WebkitMaskImage: active
-            ? `radial-gradient(circle 300px at ${pos.x}% ${pos.y}%, black 0%, transparent 100%)`
-            : "none",
-          maskImage: active
-            ? `radial-gradient(circle 300px at ${pos.x}% ${pos.y}%, black 0%, transparent 100%)`
-            : "none",
+          WebkitMaskImage: `radial-gradient(circle ${active ? "300px" : "0px"} at ${pos.x}% ${pos.y}%, black 0%, transparent 100%)`,
+          maskImage: `radial-gradient(circle ${active ? "300px" : "0px"} at ${pos.x}% ${pos.y}%, black 0%, transparent 100%)`,
+          transition: active ? "none" : "-webkit-mask-image 0.5s, mask-image 0.5s",
         }}
       >
         <h2 className="text-4xl sm:text-6xl lg:text-8xl font-black uppercase tracking-tight text-white leading-[1.1]">

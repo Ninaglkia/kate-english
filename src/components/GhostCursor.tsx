@@ -268,18 +268,31 @@ const GhostCursor = ({
 
     const ensureLoop = () => { if (!runningRef.current) { runningRef.current = true; rafRef.current = requestAnimationFrame(animate); } };
 
-    const onPointerMove = (e: PointerEvent) => {
+    const updatePosition = (clientX: number, clientY: number) => {
       const rect = host.getBoundingClientRect();
       currentMouseRef.current.set(
-        (e.clientX - rect.left) / Math.max(1, rect.width),
-        1 - (e.clientY - rect.top) / Math.max(1, rect.height)
+        (clientX - rect.left) / Math.max(1, rect.width),
+        1 - (clientY - rect.top) / Math.max(1, rect.height)
       );
       pointerActiveRef.current = true;
       lastMoveTimeRef.current = performance.now();
       ensureLoop();
     };
 
+    const onPointerMove = (e: PointerEvent) => updatePosition(e.clientX, e.clientY);
+    const onTouchMove = (e: TouchEvent) => {
+      const touch = e.touches[0];
+      if (touch) updatePosition(touch.clientX, touch.clientY);
+    };
+    const onTouchEnd = () => {
+      pointerActiveRef.current = false;
+      lastMoveTimeRef.current = performance.now();
+      ensureLoop();
+    };
+
     window.addEventListener("pointermove", onPointerMove, { passive: true });
+    parent.addEventListener("touchmove", onTouchMove, { passive: true });
+    parent.addEventListener("touchend", onTouchEnd, { passive: true });
     ensureLoop();
 
     return () => {
@@ -287,6 +300,8 @@ const GhostCursor = ({
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       runningRef.current = false; rafRef.current = null;
       window.removeEventListener("pointermove", onPointerMove);
+      parent.removeEventListener("touchmove", onTouchMove);
+      parent.removeEventListener("touchend", onTouchEnd);
       resizeObsRef.current?.disconnect();
       scene.clear(); geom.dispose(); material.dispose(); materialRef.current = null;
       composer.dispose(); composerRef.current = null;

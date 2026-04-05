@@ -7,9 +7,7 @@ import {
   AnimatedSection,
 } from "@/components/AnimatedCards";
 import PricingCards from "@/components/PricingCards";
-import GhostCursorLazy from "@/components/GhostCursorLazy";
-import Text3D from "@/components/Text3D";
-import DesktopOnly from "@/components/DesktopOnly";
+import RevealSection from "@/components/RevealSection";
 
 const TELEGRAM_LINK = "https://t.me/kate_english";
 
@@ -196,81 +194,13 @@ export default async function Home() {
         </section>
       </>
 
-      {/* CTA - Ghost reveal (touch on mobile, cursor on desktop) */}
-      {/*
-        How the reveal works:
-        1. Section has a solid black background (#050508) — fully opaque, covers aurora below
-        2. GhostCursor canvas (z-10) renders white light blobs with mixBlendMode="screen"
-           → on a black base, screen(black, white-light) = white-light (additive)
-        3. Text3D and subtitle sit above the canvas (z-20) with color="#050508" and
-           mixBlendMode="difference" — the text reads the composited layer beneath it:
-           • where canvas is dark (no light): difference(#050508, #050508) ≈ black → invisible
-           • where canvas is bright (cursor near): difference(#050508, white) ≈ white → revealed
-        4. Telegram button is isolated from the blend chain via isolation="isolate"
-           so it stays fully visible regardless of the cursor position.
-      */}
-      <section
-        className="py-16 sm:py-24 px-4 sm:px-6 relative min-h-[400px] sm:min-h-[600px] rounded-3xl mx-4 sm:mx-6 overflow-hidden"
-        style={{
-          backgroundColor: "#050508",
-          isolation: "isolate",
-          /* Ensure we sit above the fixed SoftAurora (z-0) and the global z-10 wrapper.
-             The section itself does not need a z-index — it already stacks in normal flow
-             above the aurora because the aurora is fixed and the layout wrapper is z-10.
-             What matters is that the section's own background is fully opaque (#050508)
-             with no transparency bleeding through. */
-        }}
-      >
-        {/* Canvas layer — sits at z-10 inside the section's isolation context */}
-        <GhostCursorLazy
-          color="#ffffff"
-          brightness={6}
-          edgeIntensity={0}
-          trailLength={40}
-          inertia={0.5}
-          grainIntensity={0.02}
-          bloomStrength={0.6}
-          bloomRadius={1.5}
-          bloomThreshold={0.01}
-          fadeDelayMs={2000}
-          fadeDurationMs={2000}
-          mixBlendMode="normal"
-          zIndex={10}
-        />
-
-        {/* Content layer — above canvas (z-20) so mix-blend-mode on text reads the canvas */}
-        <div className="max-w-3xl mx-auto text-center relative z-20 flex flex-col items-center justify-center min-h-[350px] sm:min-h-[500px]">
-          {/* Text3D already applies color="#050508" + mixBlendMode="difference" internally */}
-          <Text3D text={t("cta.title")} />
-
-          {/* Subtitle — same invisible-until-revealed treatment */}
-          <p
-            className="mt-6 sm:mt-8 text-base sm:text-lg select-none"
-            style={{ color: "#050508", mixBlendMode: "difference" }}
-          >
-            {t("cta.subtitle")}
-          </p>
-
-          {/*
-            Button — isolated from the blend chain so it is ALWAYS visible.
-            isolation="isolate" creates a new stacking context that prevents
-            the mixBlendMode of the parent from applying to this element.
-          */}
-          <div style={{ isolation: "isolate" }} className="mt-8 sm:mt-10 relative z-30">
-            <a
-              href={TELEGRAM_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 sm:px-10 py-4 bg-[#0088cc] text-white rounded-full text-base sm:text-lg font-semibold hover:bg-[#006daa] transition-all hover:shadow-lg hover:shadow-[#0088cc]/25"
-            >
-              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-              </svg>
-              {t("cta.button")}
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* CTA - Reveal on cursor/touch */}
+      <RevealSection
+        title={t("cta.title")}
+        subtitle={t("cta.subtitle")}
+        buttonText={t("cta.button")}
+        buttonLink={TELEGRAM_LINK}
+      />
 
       {/* Footer */}
       <footer className="py-8 px-4 sm:px-6 border-t border-black/5">

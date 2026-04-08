@@ -218,6 +218,14 @@ export default async function Home() {
               Instagram
             </a>
             <a
+              href="https://www.tiktok.com/@dailydossse"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#1a1a2e]/60 transition-colors"
+            >
+              TikTok
+            </a>
+            <a
               href={TELEGRAM_LINK}
               target="_blank"
               rel="noopener noreferrer"

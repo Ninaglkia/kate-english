@@ -30,7 +30,7 @@ export default function RevealSection({
   return (
     <div
       ref={sectionRef}
-      className="relative min-h-[520px] sm:min-h-[600px] rounded-3xl mx-4 sm:mx-6 overflow-hidden cursor-none"
+      className="relative min-h-[460px] sm:min-h-[600px] rounded-3xl mx-4 sm:mx-6 overflow-hidden cursor-none"
       style={{ backgroundColor: "#050508" }}
       onMouseMove={(e) => updatePos(e.clientX, e.clientY)}
       onTouchMove={(e) => {
@@ -51,7 +51,7 @@ export default function RevealSection({
 
       {/* Hidden text revealed by cursor light via CSS mask */}
       <div
-        className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pointer-events-none pb-36 sm:pb-28"
+        className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pointer-events-none pb-28 sm:pb-28"
         style={{
           WebkitMaskImage: `radial-gradient(circle ${active ? "300px" : "0px"} at ${pos.x}% ${pos.y}%, black 0%, transparent 100%)`,
           maskImage: `radial-gradient(circle ${active ? "300px" : "0px"} at ${pos.x}% ${pos.y}%, black 0%, transparent 100%)`,

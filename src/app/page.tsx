@@ -164,7 +164,7 @@ export default async function Home() {
                   key: "basic",
                   name: t("pricing.basic.name"),
                   description: t("pricing.basic.description"),
-                  price: 15,
+                  price: 85,
                   period: t("pricing.basic.period"),
                   features: t.raw("pricing.basic.features") as string[],
                   cta: t("hero.cta"),
@@ -173,7 +173,7 @@ export default async function Home() {
                   key: "intermediate",
                   name: t("pricing.intermediate.name"),
                   description: t("pricing.intermediate.description"),
-                  price: 25,
+                  price: 102,
                   period: t("pricing.intermediate.period"),
                   features: t.raw("pricing.intermediate.features") as string[],
                   cta: t("hero.cta"),
@@ -182,7 +182,7 @@ export default async function Home() {
                   key: "premium",
                   name: t("pricing.premium.name"),
                   description: t("pricing.premium.description"),
-                  price: 40,
+                  price: 119,
                   period: t("pricing.premium.period"),
                   features: t.raw("pricing.premium.features") as string[],
                   cta: t("hero.cta"),
@@ -208,14 +208,24 @@ export default async function Home() {
           <p>
             &copy; {new Date().getFullYear()} Kate.English. {t("footer.rights")}
           </p>
-          <a
-            href={TELEGRAM_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#1a1a2e]/60 transition-colors"
-          >
-            {t("footer.telegram")}
-          </a>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.instagram.com/dailydossse/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#1a1a2e]/60 transition-colors"
+            >
+              Instagram
+            </a>
+            <a
+              href={TELEGRAM_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#1a1a2e]/60 transition-colors"
+            >
+              {t("footer.telegram")}
+            </a>
+          </div>
         </div>
       </footer>
     </main>

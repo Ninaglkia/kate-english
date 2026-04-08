@@ -59,7 +59,7 @@ export default function PricingCards({ plans, telegramLink }: { plans: PricingPl
             <p className="mt-1 text-xs text-[#1a1a2e]/40">{plan.description}</p>
             <div className="mt-8 mb-8">
               <span className="text-6xl font-bold text-[#1a1a2e] tracking-tight">
-                $<CountUp target={plan.price} duration={1.8} />
+                <CountUp target={plan.price} duration={1.8} /> <span className="text-2xl">BYN</span>
               </span>
               <span className="text-sm ml-2 text-[#1a1a2e]/40">{plan.period}</span>
             </div>

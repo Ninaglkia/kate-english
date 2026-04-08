@@ -209,19 +209,6 @@ export default async function Home() {
             &copy; {new Date().getFullYear()} Kate.English. {t("footer.rights")}
           </p>
           <div className="flex items-center gap-4">
-            {/* TikTok */}
-            <a
-              href="https://www.tiktok.com/@dailydossse"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center rounded-full bg-black/5 hover:scale-110 transition-all"
-            >
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
-                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.04a8.16 8.16 0 0 0 4.77 1.52V7.11a4.85 4.85 0 0 1-1.01-.42z" fill="#ff0050" />
-                <path d="M17.59 5.69a4.83 4.83 0 0 1-3.77-4.25V1h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V8.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.04a8.16 8.16 0 0 0 4.77 1.52V6.11a4.85 4.85 0 0 1-1.01-.42z" fill="#00f2ea" />
-                <path d="M18.59 6.19a4.83 4.83 0 0 1-3.77-4.25V1.5h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V8.51a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.54a8.16 8.16 0 0 0 4.77 1.52V6.61a4.85 4.85 0 0 1-1.01-.42z" fill="#1a1a2e" />
-              </svg>
-            </a>
             {/* Instagram */}
             <a
               href="https://www.instagram.com/dailydossse/"

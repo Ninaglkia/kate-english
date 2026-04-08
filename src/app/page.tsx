@@ -9,7 +9,7 @@ import {
 import PricingCards from "@/components/PricingCards";
 import RevealSection from "@/components/RevealSection";
 
-const TELEGRAM_LINK = "https://t.me/kate_english";
+const TELEGRAM_LINK = "https://t.me/+375336056814?text=" + encodeURIComponent("Здравствуйте! Я хочу записаться на урок английского 🇬🇧");
 
 export default async function Home() {
   const t = await getTranslations();

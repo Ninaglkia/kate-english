@@ -75,7 +75,7 @@ export default function RevealSection({
       )}
 
       {/* Button + Social icons always visible */}
-      <div className="absolute bottom-12 sm:bottom-16 left-0 right-0 flex flex-col items-center gap-6">
+      <div className="absolute bottom-6 sm:bottom-8 left-0 right-0 flex flex-col items-center gap-4">
         <a
           href={buttonLink}
           target="_blank"

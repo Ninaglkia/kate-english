@@ -30,7 +30,7 @@ export default function RevealSection({
   return (
     <div
       ref={sectionRef}
-      className="relative min-h-[400px] sm:min-h-[600px] rounded-3xl mx-4 sm:mx-6 overflow-hidden cursor-none"
+      className="relative min-h-[520px] sm:min-h-[600px] rounded-3xl mx-4 sm:mx-6 overflow-hidden cursor-none"
       style={{ backgroundColor: "#050508" }}
       onMouseMove={(e) => updatePos(e.clientX, e.clientY)}
       onTouchMove={(e) => {
@@ -51,7 +51,7 @@ export default function RevealSection({
 
       {/* Hidden text revealed by cursor light via CSS mask */}
       <div
-        className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pointer-events-none"
+        className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pointer-events-none pb-36 sm:pb-28"
         style={{
           WebkitMaskImage: `radial-gradient(circle ${active ? "300px" : "0px"} at ${pos.x}% ${pos.y}%, black 0%, transparent 100%)`,
           maskImage: `radial-gradient(circle ${active ? "300px" : "0px"} at ${pos.x}% ${pos.y}%, black 0%, transparent 100%)`,
@@ -80,7 +80,7 @@ export default function RevealSection({
           href={buttonLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 px-8 sm:px-10 py-4 bg-[#0088cc] text-white rounded-full text-base sm:text-lg font-semibold hover:bg-[#006daa] transition-all hover:shadow-lg hover:shadow-[#0088cc]/25"
+          className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-10 py-3 sm:py-4 bg-[#0088cc] text-white rounded-full text-sm sm:text-lg font-semibold hover:bg-[#006daa] transition-all hover:shadow-lg hover:shadow-[#0088cc]/25"
         >
           <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
             <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
@@ -93,7 +93,7 @@ export default function RevealSection({
             href="https://www.tiktok.com/@dailydossse"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-14 h-14 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all hover:scale-110"
+            className="w-11 h-11 sm:w-14 sm:h-14 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all hover:scale-110"
           >
             <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
               <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.04a8.16 8.16 0 0 0 4.77 1.52V7.11a4.85 4.85 0 0 1-1.01-.42z" fill="#ff0050" />
@@ -106,7 +106,7 @@ export default function RevealSection({
             href="https://www.instagram.com/dailydossse/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-14 h-14 flex items-center justify-center rounded-full hover:scale-110 transition-all"
+            className="w-11 h-11 sm:w-14 sm:h-14 flex items-center justify-center rounded-full hover:scale-110 transition-all"
             style={{ background: "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)" }}
           >
             <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
